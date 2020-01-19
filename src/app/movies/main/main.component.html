@@ -1,17 +1,33 @@
 <div class='container'>
-    <div class='header'>Find your favourite movie</div>
+    <div class='header text-secondary'>Find your favourite movie</div>
 
    
         <div class="input-group mb-3">
             
                 <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <input [(ngModel)]="year" type="text" class="form-control" placeholder="Year" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                <input [(ngModel)]="type "type="text" class="form-control" placeholder="Movie, series" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            
+                <input [(ngModel)]="type" type="text" class="form-control" placeholder="Movie, series, episode" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" (click)=searchMovies()>Search</button>
+                </div>
         </div>
         <div>
-            <app-short-overview></app-short-overview>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let movie of movies.Search">
+                    <app-search-result
+                    [title]='movie.Title'
+                    [year]='movie.Year'
+                    [poster]='movie.Poster'
+                    [id]='movie.imdbID'
+                    >
+                    </app-search-result>
+                    
+                    
+                  
+                </li>
+              </ul>
         </div>
    
 </div>
+

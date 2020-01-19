@@ -1,10 +1,14 @@
 .container {
     justify-content: center;
     margin-top: auto;
+    width: 80%;
 }
 .header {
     font-size: 50px;
     text-align: center;
     line-height: 100px;
-    
+}
+.form-control:focus {
+    border-color: #ff4444;
+    box-shadow: 0 0 0 0.2rem rgba(255,68,68,.25);
 }

@@ -1,1 +1,16 @@
-<p>search-result works!</p>
+<div class='container' routerLink='/movies/{{id}}'>
+    <div class='img'> <img src="{{poster}}">
+      <div class='visible'>lala</div>
+    </div>
+    <div class='info'>
+      <h2 class='title text-danger'>{{ title }} </h2>
+      <div class='shortinfo'>
+        <p class="text-secondary">Release date</p>
+        <p class='text-danger'>{{ year }} </p>
+        <p class="text-secondary">ID number</p>
+        <p class='text-danger'>{{id}}</p>
+        <p>{{movie.Search}}</p>
+      </div>
+    </div>
+  </div>
+  
