@@ -1,0 +1,69 @@
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.section1 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;;
+}
+.borders {
+    width: 100%;
+    border-top: 2px solid #f4c2c2;
+    border-bottom: 2px solid #f4c2c2;
+    margin-top: 5px;
+    
+}
+.poster{
+    margin: 0;
+    border: 0;
+}
+.details {
+    width: 100%;
+    padding-left: 15px;
+}
+span{
+    padding-right: 5px;
+    color: #cd5e77;
+}
+.photo {
+    height: 220px;
+    width:180px;
+    border-color: #ff4444;
+    box-shadow: 0 0 0 0.2rem rgba(255,68,68,.25);
+}
+.director-inner {
+    display: flex;
+    justify-content: left;
+    flex-wrap: nowrap;
+    padding-left: 16px;
+}
+.director {
+    display: flex;
+    flex-wrap: wrap;
+    width: 190px;
+    
+}
+.portal-rating {
+    font-size: x-large;
+    width: 30%;
+}
+.row-rating {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.progress-container {
+    width: 30%;
+}
+.progress {
+    width: 250px;
+}
+.raiting-div {
+    height: 100%;
+    width: 40%;
+}

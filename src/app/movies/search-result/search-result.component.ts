@@ -18,7 +18,7 @@ export class SearchResultComponent implements OnInit {
   constructor(private moviesSearchService: MoviesSearchService) { }
 
   ngOnInit() { 
-    this.moviesSearchService.getMovieById().subscribe(resp => {this.movie = resp; console.log(resp)})
+    this.moviesSearchService.getMovieById(this.id).subscribe(resp => {this.movie = resp; console.log(resp)})
     console.log('ANa')
   }
 }
