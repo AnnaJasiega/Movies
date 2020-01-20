@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class MoviesSearchService {
 
-  apiKey:string = '49390c5c';
+  apiKey:string = '&apikey=49390c5c';
   titleUrl='';
   yearUrl='';
   typeUrl='';
@@ -20,20 +20,14 @@ export class MoviesSearchService {
   ) {}
   
   public getData(title, year, type): Observable<Movie> {
-    if(title){
-      this.titleUrl = "s=" + title;
-    }
-    if(year){
-      this.yearUrl = "&y=" + year;
-    }
-    if(type){
-      this.typeUrl = "&type=" + type;
-    }
+    if(title){this.titleUrl = "s=" + title};
+    if(year){this.yearUrl = "&y=" + year};
+    if(type){this.typeUrl = "&type=" + type};
 
-
-    return this.http.get<Movie>('http://www.omdbapi.com/?' + this.titleUrl + this.typeUrl + this.yearUrl +'&apikey='+ this.apiKey)
+    return this.http.get<Movie>('http://www.omdbapi.com/?' + this.titleUrl + this.typeUrl + this.yearUrl + this.apiKey)
   }
-  public getMovieById(): Observable<Movie> {
-    return this.http.get<Movie>('http://www.omdbapi.com/?i=tt0460883&plot=full&apikey=49390c5c')
+  
+  public getMovieById(id): Observable<Movie> {
+    return this.http.get<Movie>('http://www.omdbapi.com/?i='+id+'&plot=full'+ this.apiKey)
   }
 }

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './movies/main/main.component';
@@ -10,7 +11,8 @@ import { SearchResultComponent } from './movies/search-result/search-result.comp
 import { MoviesSearchService } from 'src/app/services/movies-search.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
-import { PageNotFoundComponent } from './movies/page-not-found/page-not-found.component'
+import { PageNotFoundComponent } from './movies/page-not-found/page-not-found.component';
+import { SliderComponent } from './movies/slider/slider.component'
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { PageNotFoundComponent } from './movies/page-not-found/page-not-found.co
     ShortOverviewComponent,
     SearchResultComponent,
     MovieDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    NgbModule
   ],
   providers: [MoviesSearchService],
   bootstrap: [AppComponent]

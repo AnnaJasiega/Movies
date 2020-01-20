@@ -13,13 +13,18 @@ export class MovieDetailComponent implements OnInit {
   private movie:any = null;
   private actors:Array<String>;
   private directors:Array<String>;
+  private currentRate = 0;
+  private isVisible: boolean = false;
+  
 
   constructor(private route: ActivatedRoute, 
               private router: Router,
               private service: MoviesSearchService,
               ) { }
 
-
+    seePoster(){
+      this.isVisible=!this.isVisible
+    }
 
     ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -29,6 +34,7 @@ export class MovieDetailComponent implements OnInit {
       this.movie = resp;
       this.actors = this.movie.Actors.split(',');
       this.directors = this.movie.Director.split(',');
+      this.currentRate = this.movie.imdbRating;
 
       })
     }

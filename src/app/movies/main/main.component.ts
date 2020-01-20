@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
   ) { }
 
   searchMovies(){
-    this.moviesSearchServices.getData(this.title, this.year, this.type).subscribe((resp: {}) => {this.movies = resp });
+    this.moviesSearchServices.getData(this.title, this.year, this.type).subscribe((resp: {}) => this.movies = resp);
   }
 
   ngOnInit() {

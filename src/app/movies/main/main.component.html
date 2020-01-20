@@ -6,28 +6,39 @@
             
                 <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <input [(ngModel)]="year" type="text" class="form-control" placeholder="Year" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                <input [(ngModel)]="type" type="text" class="form-control" placeholder="Movie, series, episode" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 
+                <select [(ngModel)]="type" type="text" class="custom-select" placeholder="Movie, series, episode">
+                    <option value="1" class=''>Movie</option>
+                    <option value="2">Series</option>
+                    <option value="3">Episode</option>
+                  </select>
+
+
+
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button" (click)=searchMovies()>Search</button>
                 </div>
         </div>
-        <div>
-            <ul class="list-group">
-                <li class="list-group-item" *ngFor="let movie of movies.Search">
-                    <app-search-result
-                    [title]='movie.Title'
-                    [year]='movie.Year'
-                    [poster]='movie.Poster'
-                    [id]='movie.imdbID'
-                    >
-                    </app-search-result>
+        <div *ngIf="movies">
+            <div *ngIf="movies.Response =='False'" class='false'>
+                Sorry, unfortunately there is no movie you are looking for. <br> Try to change the criteria
+            </div>
+            <div *ngIf="movies.Response =='True'">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let movie of movies.Search">
+                        <app-search-result
+                        [title]='movie.Title'
+                        [year]='movie.Year'
+                        [poster]='movie.Poster'
+                        [id]='movie.imdbID'
+                        >
+                        </app-search-result>
+                        
+                        
                     
-                    
-                  
-                </li>
-              </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-   
 </div>
 

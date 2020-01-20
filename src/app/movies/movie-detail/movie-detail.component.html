@@ -1,62 +1,72 @@
+
 <div class='container'>
-    <section class='section1'>
-        <img src='{{movie.Poster}}' class='poster'>
-        <div class='details'>
-            <h1 class='borders'>{{movie.Title}}</h1>
-            <p class="text-secondary">
-                Released: <span>{{movie.Released}}</span>
-                Time: <span>{{movie.Runtime}}</span>
-            </p>
-            <p class="text-secondary">
-                Genre: <span>{{movie.Genre}}</span>
-                Language: <span>{{movie.Language}}</span>
-            </p>
-            <h2 class='borders'>Director</h2>
-            <div class="director-inner">
-                <div class="director row" *ngFor='let director of directors'>
-                    <img class='photo'>
-                    <span>{{director}}</span>    
+    <div [ngClass]="{'opacity' : isVisible}">
+        <section class='section1'>
+            <img src='{{movie.Poster}}' class='poster' (click)='seePoster()'>
+            <div class='details'>
+                <h1 class='borders'>{{movie.Title}}</h1>
+                <p class="text-secondary">
+                    Released: <span>{{movie.Released}}</span>
+                    Time: <span>{{movie.Runtime}}</span>
+                </p>
+                <p class="text-secondary">
+                    Genre: <span>{{movie.Genre}}</span>
+                    Language: <span>{{movie.Language}}</span>
+                </p>
+                <h2 class='borders'>Director</h2>
+                <div class="director-inner">
+                    <div class="director row" *ngFor='let director of directors'>
+                        <img class='photo'>
+                        <span>{{director}}</span>    
+                    </div>
                 </div>
-            </div>
-        </div>          
-    </section>
-    <section>
-       <h1 class='borders'>Actors</h1>
-       <app-slider 
-       [actors]='actors'>
-       </app-slider>
-    </section>
-    <section>
-        <h1 class='borders'>Ratings</h1>
-        <div class='row-rating'>
-            <div class='portal-rating'>IMDb:</div>
-            <div class='progress-container'>
-                <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%"></div>
+            </div>          
+        </section>
+        <section>
+        <h1 class='borders'>Actors</h1>
+        <app-slider 
+        [actors]='actors'>
+        </app-slider>
+        </section>
+        <section>
+            <h1 class='borders'>Ratings</h1>
+
+            <div class='row-rating' *ngIf="movie.imdbRating != 'N/A'">
+                <div class='portal-rating'>IMDb:</div>
+                <div class='progress-container'>
+                <ng-template #t let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                    </span>
+                </ng-template>
+                
+                <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" max="10"></ngb-rating>
                 </div>
+                <div class='rating-div'>{{movie.imdbRating}}/10</div>
+
             </div>
-            <div class='raiting-div'>{{movie.imdbRating}}</div>
-        </div>
-        <div class='row-rating'>
-            <div class='portal-rating'>Rotten Tomatoes:</div>
-            <div class='progress-container'>
-                <div class="progress">
-                <div class="progress-bar" style="width:5%"></div>
+
+            <div class='row-rating' *ngIf="movie.Ratings[1]">
+                <div class='portal-rating'>Rotten Tomatoes:</div>
+                <div class='progress-container'>
+                    <div class="progress">
+                    <div class="progress-bar" [style.width]="movie.Ratings[1].Value"></div>
+                    </div>
                 </div>
+                <div class='rating-div'>{{movie.Ratings[1].Value}}</div>
             </div>
-            <div class='raiting-div'>5%</div>
-        </div>
-        <div class='row-rating'>
-            <div class='portal-rating'>Metacritic:</div>
-            <div class='progress-container'>
-                <div class="progress">
-                <div class="progress-bar" style="width:15%"></div>
+
+            <div class='row-rating' *ngIf="movie.Metascore != 'N/A'">
+                <div class='portal-rating'>Metacritic:</div>
+                <div class='progress-container'>
+                    <div class="progress">
+                    <div class="progress-bar" [style.width.%]="movie.Metascore"></div>
+                    </div>
                 </div>
+                <div class='rating-div'>{{movie.Metascore}}/100</div>
             </div>
-            <div class='raiting-div'>{{movie.Metascore}}/100</div>
-        </div>
-    </section>
-    
-  
+        </section> 
+    </div>
+   <img src='{{movie.Poster}}' *ngIf='isVisible' class='bigPoster' (click)='seePoster()'>
 </div>
-  
+ 
