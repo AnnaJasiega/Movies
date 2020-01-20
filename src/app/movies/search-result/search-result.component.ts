@@ -12,13 +12,16 @@ export class SearchResultComponent implements OnInit {
   @Input('poster') poster: string;
   @Input('id') id:string;
 
-  movie: Object;
+  private movie:any = null;
+  private ratings:[];
   
   
   constructor(private moviesSearchService: MoviesSearchService) { }
 
   ngOnInit() { 
-    this.moviesSearchService.getMovieById(this.id).subscribe(resp => {this.movie = resp; console.log(resp)})
-    console.log('ANa')
+    this.moviesSearchService.getMovieById(this.id).subscribe(resp => {
+      this.movie = resp; 
+      this.ratings = this.movie.Ratings;
+    })
   }
 }

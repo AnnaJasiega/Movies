@@ -1,6 +1,9 @@
 <div class='container' routerLink='/movies/{{id}}'>
     <div class='img'> <img src="{{poster}}">
-      <div class='visible'>lala</div>
+      <div class='visible'>
+        <div class='rating'></div>
+        <div *ngFor='let rating of ratings' class='rating'> &hearts; {{rating.Value}}</div>
+      </div>
     </div>
     <div class='info'>
       <h2 class='title text-danger'>{{ title }} </h2>
