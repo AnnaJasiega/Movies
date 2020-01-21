@@ -19,12 +19,12 @@ export class MoviesSearchService {
     private http: HttpClient
   ) {}
   
-  public getData(title, year, type): Observable<Movie> {
+  public getData(title, year, type, page): Observable<Movie> {
     if(title){this.titleUrl = "s=" + title};
     if(year){this.yearUrl = "&y=" + year};
     if(type){this.typeUrl = "&type=" + type};
 
-    return this.http.get<Movie>('http://www.omdbapi.com/?' + this.titleUrl + this.typeUrl + this.yearUrl + this.apiKey)
+    return this.http.get<Movie>('http://www.omdbapi.com/?' + this.titleUrl + this.typeUrl + this.yearUrl +"&page=" + page + this.apiKey)
   }
   
   public getMovieById(id): Observable<Movie> {
