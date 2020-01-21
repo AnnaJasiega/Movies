@@ -16,3 +16,6 @@
     font-size: x-large;
     color: #cd5e77;
 }
+li:nth-child(odd) {
+    background: whitesmoke;
+}

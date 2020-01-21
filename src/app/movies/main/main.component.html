@@ -7,8 +7,8 @@
                 <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <input [(ngModel)]="year" type="text" class="form-control" placeholder="Year" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 
-                <select [(ngModel)]="type" type="text" class="custom-select" placeholder="Movie, series, episode">
-                    <option value="1">Movie</option>
+                <select [(ngModel)]="type" type="text" class="custom-select form-control" placeholder="Movie, series, episode">
+                    <option value="1" class='form-control'>Movie</option>
                     <option value="2">Series</option>
                     <option value="3">Episode</option>
                   </select>
@@ -19,12 +19,21 @@
                     <button class="btn btn-outline-secondary" type="button" (click)=searchMovies()>Search</button>
                 </div>
         </div>
-        <div *ngIf="movies">
-            <div *ngIf="movies.Response =='False'" class='false'>
+        <ngx-spinner
+        bdColor= "rgba(255, 255, 255, 0.9)"
+        size="medium"
+        color="gray"
+        type="ball-fall"
+        >
+        </ngx-spinner>      
+
+        <div *ngIf="moviesAll[0]">
+            <div *ngIf="moviesAll[0].Response =='False'" class='false'>
                 Sorry, unfortunately there is no movie you are looking for. <br> Try to change the criteria
             </div>
-            <div *ngIf="movies.Response =='True'">
-                <ul class="list-group">
+        
+            <div *ngIf="moviesAll[0].Response =='True'">
+                <ul class="list-group" *ngFor='let movies of moviesAll'>
                     <li class="list-group-item" *ngFor="let movie of movies.Search">
                         <app-search-result
                         [title]='movie.Title'
@@ -32,13 +41,18 @@
                         [poster]='movie.Poster'
                         [id]='movie.imdbID'
                         >
-                        </app-search-result>
-                        
-                        
-                    
+                        </app-search-result>                      
                     </li>
+                    <div
+                    class="search-results"
+                    infiniteScroll
+                    [infiniteScrollDistance]="2"
+                    [infiniteScrollThrottle]="50"
+                    (scrolled)="onScroll()"
+                    >
+                    </div>
                 </ul>
-            </div>
+           </div>
         </div>
 </div>
 

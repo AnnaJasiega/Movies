@@ -12,6 +12,7 @@
 }
 img {
     height: 100%;   
+    
 }
 
 .img {
@@ -41,7 +42,7 @@ p {
    
     margin:0;
     padding: 0;
-    background: rgba(205, 94, 119, 0.7);
+    background: rgba(205, 94, 119, 0.9);
     
 }
 .rating {

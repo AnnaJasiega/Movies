@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+
+
 import { MoviesSearchService } from '../../services/movies-search.service';
 
 @Component({
@@ -13,15 +15,21 @@ export class SearchResultComponent implements OnInit {
   @Input('id') id:string;
 
   private movie:any = null;
+ 
   private ratings:[];
   
+  compareLength(a,b){
+    return a.Value.length - b.Value.length
+  }
   
-  constructor(private moviesSearchService: MoviesSearchService) { }
+  constructor(private moviesSearchService: MoviesSearchService,
+              ) { }
 
   ngOnInit() { 
     this.moviesSearchService.getMovieById(this.id).subscribe(resp => {
-      this.movie = resp; 
-      this.ratings = this.movie.Ratings;
+    this.movie = resp; 
+    this.ratings = this.movie.Ratings.sort(this.compareLength);
+     
     })
   }
 }
