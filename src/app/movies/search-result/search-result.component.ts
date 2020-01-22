@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-
 import { MoviesSearchService } from '../../services/movies-search.service';
 
 @Component({

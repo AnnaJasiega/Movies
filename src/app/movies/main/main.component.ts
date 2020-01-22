@@ -11,9 +11,9 @@ import { MoviesSearchService } from '../../services/movies-search.service';
 })
 export class MainComponent implements OnInit {
 
-  title: string;
-  year: string;
-  type: string;
+  title: string ='';
+  year: string  ='';
+  type: string  = '';
   moviesAll: Array<Object> = [];
   i: number = 1;
   

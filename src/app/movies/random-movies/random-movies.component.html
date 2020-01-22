@@ -1,1 +1,8 @@
-<p>random-movies works!</p>
+
+
+<table>
+    <td class ='col-sm-3 container' *ngFor='let movies of moviesAll'>
+        <img *ngFor='let movie of movies.Search' src='{{movie.Poster}}' routerLink='/movies/{{movie.imdbID}}'>
+    </td>
+
+</table>

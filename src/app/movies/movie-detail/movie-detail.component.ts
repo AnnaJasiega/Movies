@@ -15,6 +15,7 @@ export class MovieDetailComponent implements OnInit {
   private directors:Array<String>;
   private currentRate = 0;
   private isVisible: boolean = false;
+  private isClicked: boolean = false;
   
 
   constructor(private route: ActivatedRoute, 

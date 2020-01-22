@@ -1,16 +1,16 @@
 <div class='container' (keyup.enter)=searchMovies()>
     <div class='header text-secondary'>Find your favourite movie</div>
 
-   
+        
         <div class="input-group mb-3">
             
-                <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
                 <input [(ngModel)]="year" type="text" class="form-control" placeholder="Year" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 
                 <select [(ngModel)]="type" type="text" class="custom-select form-control" placeholder="Movie, series, episode">
-                    <option value="1" class='form-control'>Movie</option>
-                    <option value="2">Series</option>
-                    <option value="3">Episode</option>
+                    <option value="Movie" class='form-control'>Movie</option>
+                    <option value="Series" class='form-control'>Series</option>
+                    <option value="Episode" class='form-control'>Episode</option>
                   </select>
 
 
@@ -19,6 +19,7 @@
                     <button class="btn btn-outline-secondary" type="button" (click)=searchMovies()>Search</button>
                 </div>
         </div>
+       
         <ngx-spinner
         bdColor= "rgba(255, 255, 255, 0.9)"
         size="medium"
@@ -26,7 +27,7 @@
         type="ball-fall"
         >
         </ngx-spinner>      
-
+        <app-random-movies *ngIf="!moviesAll[0]"></app-random-movies>
         <div *ngIf="moviesAll[0]">
             <div *ngIf="moviesAll[0].Response =='False'" class='false'>
                 Sorry, unfortunately there is no movie you are looking for. <br> Try to change the criteria

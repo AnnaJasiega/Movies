@@ -8,7 +8,24 @@
 .section1 {
     width: 100%;
     display: flex;
-    justify-content: flex-start;;
+    justify-content: flex-start;
+    
+}
+.starLoc {
+    width: 30%;
+    position: relative;
+    
+}
+.starFav{
+    position: absolute;
+    bottom: 30px;
+    right: 0px;
+    text-align: end;
+    display: inline-block;
+    font-size: 6rem;
+}
+.clikedStar {
+    color: yellow;
 }
 .borders {
     width: 100%;
@@ -18,11 +35,13 @@
     
 }
 .poster{
+    width: 100%;
     margin: 0;
     border: 0;
+    
 }
 .details {
-    width: 100%;
+    width: 70%;
     padding-left: 15px;
 }
 span{

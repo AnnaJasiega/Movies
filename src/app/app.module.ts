@@ -3,33 +3,39 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './movies/main/main.component';
-import { ShortOverviewComponent } from './movies/short-overview/short-overview.component';
 import { SearchResultComponent } from './movies/search-result/search-result.component';
 import { MoviesSearchService } from 'src/app/services/movies-search.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { PageNotFoundComponent } from './movies/page-not-found/page-not-found.component';
-import { SliderComponent } from './movies/slider/slider.component'
+import { SliderComponent } from './movies/slider/slider.component';
+import { RandomMoviesComponent } from './movies/random-movies/random-movies.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ShortOverviewComponent,
     SearchResultComponent,
     MovieDetailComponent,
     PageNotFoundComponent,
-    SliderComponent
+    SliderComponent,
+    RandomMoviesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    InfiniteScrollModule
   ],
   providers: [MoviesSearchService],
   bootstrap: [AppComponent]

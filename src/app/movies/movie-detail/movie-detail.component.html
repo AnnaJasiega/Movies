@@ -2,7 +2,10 @@
 <div class='container'>
     <div [ngClass]="{'opacity' : isVisible}">
         <section class='section1'>
-            <img src='{{movie.Poster}}' class='poster' (click)='seePoster()'>
+            <div class='starLoc' (click)="isClicked = !isClicked" [class.clikedStar]="isClicked">
+                <img src='{{movie.Poster}}' class='poster' (click)='seePoster()'>
+                <div class = 'starFav'>&#9733;</div>
+            </div>
             <div class='details'>
                 <h1 class='borders'>{{movie.Title}}</h1>
                 <p class="text-secondary">

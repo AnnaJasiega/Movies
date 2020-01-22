@@ -1,0 +1,15 @@
+td {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    float: left;
+    margin:0;
+
+}
+
+img {
+    width: 100%;
+    
+}
+td:nth-child(odd) {
+    background: whitesmoke;
+}
