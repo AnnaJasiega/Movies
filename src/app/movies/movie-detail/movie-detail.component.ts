@@ -9,10 +9,10 @@ import { MoviesSearchService } from '../../services/movies-search.service';
   styleUrls: ['./movie-detail.component.css']
 })
 export class MovieDetailComponent implements OnInit {
-  private movieId = null;
-  private movie:any = null;
-  private actors:Array<String>;
-  private directors:Array<String>;
+  private movieId = "";
+  private movie:any;
+  private actors:Array<String> = [];
+  private directors:Array<String> = [];
   private currentRate = 0;
   private isVisible: boolean = false;
   private isClicked: boolean = false;

@@ -32,20 +32,25 @@
         </app-slider>
         </section>
         <section>
-            <h1 class='borders'>Ratings</h1>
+            <h1 class='borders'>
+                Ratings
+            </h1>
 
             <div class='row-rating' *ngIf="movie.imdbRating != 'N/A'">
                 <div class='portal-rating'>IMDb:</div>
                 <div class='progress-container'>
-                <ng-template #t let-fill="fill">
-                    <span class="star" [class.full]="fill === 100">
-                    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
-                    </span>
-                </ng-template>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                        </span>
+                    </ng-template>
                 
-                <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" max="10"></ngb-rating>
+                    <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" max="10"></ngb-rating>
                 </div>
-                <div class='rating-div'>{{movie.imdbRating}}/10</div>
+
+                <div class='rating-div'>
+                    {{movie.imdbRating}}/10
+                </div>
 
             </div>
 

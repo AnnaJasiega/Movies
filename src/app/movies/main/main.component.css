@@ -3,10 +3,20 @@
     margin-top: auto;
     width: 80%;
 }
+.marquee {
+    background-image: url('../../img/pngfuel.png');
+    background-size: 100% auto;
+    margin: 0 auto;
+}
 .header {
+    height: 200px;
     font-size: 50px;
     text-align: center;
     line-height: 100px;
+}
+.input-group{
+    width: 90%;
+    margin: 0 auto;
 }
 .form-control:focus {
     border-color: #ff4444;

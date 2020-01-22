@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 .photo {
     height: 220px;
@@ -18,30 +19,4 @@
 span{
     padding-right: 5px;
     color: #cd5e77;
-}
-.arrow {
-    font-size: 5em;
-}
-.arrow_prev{
-    border-top: 1px solid rgba(255,68,68);
-    border-left: 1px solid rgba(255,68,68);
-    transform: rotate(-45deg);
-    width: 50px;
-    height: 50px;
-    z-index: 1;
-}
-.arrow_next{
-    border-top: 1px solid rgba(255,68,68);
-    border-right: 1px solid rgba(255,68,68);
-    transform: rotate(45deg);
-    width: 50px;
-    height: 50px;
-    z-index: 1;
-}
-#arrow::before {
-    border-top: 1px solid rgba(255,68,68);
-    border-left: 1px solid rgba(255,68,68);
-    transform: rotate(-45deg);
-    width: 50px;
-    height: 50px;
 }

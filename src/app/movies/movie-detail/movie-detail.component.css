@@ -14,6 +14,8 @@
 .starLoc {
     width: 30%;
     position: relative;
+    display: flex;
+    align-content: flex-end;
     
 }
 .starFav{
@@ -36,8 +38,8 @@
 }
 .poster{
     width: 100%;
-    margin: 0;
-    border: 0;
+    
+ 
     
 }
 .details {
@@ -117,4 +119,28 @@ span{
   }
   .opacity {
      opacity: 0.2;
+  }
+  @media screen and (max-width: 600px) {
+    .section1 {
+      flex-wrap: wrap;
+    }
+    .starLoc {
+        width: 100%;
+    }
+    .details {
+        width: 100%;
+    }
+    .row-rating {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .portal-rating {
+        width: 100%;
+    }
+    .progress-container{
+        width: 100%;
+    }
+    .rating-div{
+        width: 100%;
+    }
   }

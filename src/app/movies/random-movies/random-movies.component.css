@@ -1,15 +1,21 @@
+.container {
+    overflow-y: scroll;
+    height: 400px;
+    scrollbar-width: none;
+    
+}
 td {
-    border-left: 1px solid lightgray;
-    border-right: 1px solid lightgray;
     float: left;
     margin:0;
+    background-image: url('../../img/movietape.png');
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-attachment: local;
+    text-align: center;
 
 }
 
 img {
-    width: 100%;
-    
+    width: 73%;   
 }
-td:nth-child(odd) {
-    background: whitesmoke;
-}
+
