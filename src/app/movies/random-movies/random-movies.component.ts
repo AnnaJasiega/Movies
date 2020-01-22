@@ -10,7 +10,7 @@ import { MoviesSearchService } from '../../services/movies-search.service';
 export class RandomMoviesComponent implements OnInit {
 private randomWords: Array<String> = ['baby', 'moon', 'light', 
 'movie', 'day', 'animal', 'tree', 'world', 'chair', 'school', 
-'meat', 'hall', 'unit', 'computer', 'light', 'summer', 'year', 'city', 'work', 'sun' ];
+'meat', 'hall', 'unit', 'computer', 'light', 'summer', 'year', 'city', 'work', 'sun', 'break', 'trip', 'sea', 'black', 'white', 'color', 'dress', 'blue', 'lady', 'boy' ];
 private moviesAll:Array<Object> = [];
 
 
@@ -18,7 +18,7 @@ private moviesAll:Array<Object> = [];
     
   }
   getRandomNumber(){
-    return Math.floor(Math.random() * 20);
+    return Math.floor(Math.random() * this.randomWords.length);
   }
 
   ngOnInit() {
