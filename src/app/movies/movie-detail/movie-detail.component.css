@@ -20,7 +20,7 @@
 }
 .starFav{
     position: absolute;
-    bottom: 30px;
+    bottom: 10px;
     right: 0px;
     text-align: end;
     display: inline-block;
@@ -31,8 +31,8 @@
 }
 .borders {
     width: 100%;
-    border-top: 2px solid #f4c2c2;
-    border-bottom: 2px solid #f4c2c2;
+    border-top: 2px solid rgba(255,68,68);
+    border-bottom: 2px solid rgba(255,68,68);
     margin-top: 5px;
     
 }
@@ -48,13 +48,13 @@
 }
 span{
     padding-right: 5px;
-    color: #cd5e77;
+    color:rgba(255,68,68);
 }
 .photo {
     height: 220px;
     width:180px;
-    border-color: #ff4444;
-    box-shadow: 0 0 0 0.2rem rgba(255,68,68,.25);
+    border-color: rgb(0,175,177);
+    box-shadow: 0 0 0 0.2rem rgb(0,175,177);
 }
 .director-inner {
     display: flex;

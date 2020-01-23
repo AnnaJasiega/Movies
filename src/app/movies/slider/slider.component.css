@@ -8,8 +8,9 @@
 .photo {
     height: 220px;
     width:180px;
-    border-color: #ff4444;
-    box-shadow: 0 0 0 0.2rem rgba(255,68,68,.25);
+    border-color: rgb(0,175,177);
+    box-shadow: 0 0 0 0.2rem rgb(0,175,177);
+   
 }
 .actor {
     display: flex;
@@ -18,5 +19,5 @@
 }
 span{
     padding-right: 5px;
-    color: #cd5e77;
+    color: rgba(255,68,68);
 }

@@ -10,7 +10,11 @@ import { MoviesSearchService } from '../../services/movies-search.service';
 export class RandomMoviesComponent implements OnInit {
 private randomWords: Array<String> = ['baby', 'moon', 'light', 
 'movie', 'day', 'animal', 'tree', 'world', 'chair', 'school', 
-'meat', 'hall', 'unit', 'computer', 'light', 'summer', 'year', 'city', 'work', 'sun', 'break', 'trip', 'sea', 'black', 'white', 'color', 'dress', 'blue', 'lady', 'boy' ];
+'meat', 'hall', 'unit', 'computer', 'light', 'summer', 'year', 
+'city', 'work', 'sun', 'break', 'trip', 'sea', 'black', 'white', 
+'color', 'dress', 'blue', 'lady', 'boy', 'people', 'art', 'history',
+'way',  'music', 'bird', 'problem', 'nature', 'soviety', 'story',
+'thing', 'freedom', 'paper', 'exam'];
 private moviesAll:Array<Object> = [];
 
 

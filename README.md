@@ -1,8 +1,8 @@
 # Jak zainstalować i uruchomić aplikację?
 
-Najpierw należy sklonować projekt z repozytorium używając komendy git clone https://github.com/AnnaJasiega/Movies.git
+First clone the repository using git clone https://github.com/AnnaJasiega/Movies.git, run 'npm install' and next 'ng serve'. Navigate to 'http://localhost:4200/'.
 
-Następnie wpisać w konsoli 'ng serve'. Aplikację znajdziesz po adresem 'http://localhost:4200/'.
+
 
 # Movies
 
