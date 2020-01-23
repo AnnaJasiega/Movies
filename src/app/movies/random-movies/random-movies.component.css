@@ -1,8 +1,7 @@
 .container {
     overflow-y: scroll;
     height: 400px;
-    scrollbar-width: none;
-    
+    scrollbar-width: none;   
 }
 td {
     float: left;
@@ -12,9 +11,7 @@ td {
     background-size: contain;
     background-attachment: local;
     text-align: center;
-
 }
-
 img {
     width: 73%;   
 }

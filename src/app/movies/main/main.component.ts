@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-//import { InfiniteScroll } from 'ngx-infinite-scroll';
 
 import { MoviesSearchService } from '../../services/movies-search.service';
 
