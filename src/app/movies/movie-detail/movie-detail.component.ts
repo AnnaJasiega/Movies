@@ -17,6 +17,7 @@ export class MovieDetailComponent implements OnInit {
   private isVisible: boolean = false;
   private isClicked: boolean = false;
   private url:string = '';
+  private seeMore: boolean = false;
   
 
   constructor(private route: ActivatedRoute, 
@@ -27,13 +28,16 @@ export class MovieDetailComponent implements OnInit {
     seePoster(){
       this.isVisible=!this.isVisible
     }
+    seeMoreClick(){
+      this.seeMore = !this.seeMore
+    }
 
     ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.movieId = params.get('id');
     });
     this.route.paramMap.subscribe(params => {
-      this.url = params.get('url');
+      (this.url = params.get('url'))||(this.url = 'movies');
     });
     this.service.getMovieById(this.movieId).subscribe((resp) => {
       this.movie = resp;

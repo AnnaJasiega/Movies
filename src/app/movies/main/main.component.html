@@ -26,7 +26,7 @@
         type="ball-fall"
         >
         </ngx-spinner>      
-        <app-random-movies *ngIf="!url"></app-random-movies>
+        <app-random-movies *ngIf="noUrl"></app-random-movies>
         <div *ngIf="moviesAll[0]">
             <div *ngIf="moviesAll[0].Response =='False'" class='false'>
                 Sorry, unfortunately there is no movie you are looking for. <br> Try to change the criteria

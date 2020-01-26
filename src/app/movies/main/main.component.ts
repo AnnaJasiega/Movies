@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { MoviesSearchService } from '../../services/movies-search.service';
 
@@ -18,11 +18,14 @@ export class MainComponent implements OnInit {
   i: number = 1;
   scrolled: boolean = false;
   url: string = '';
+  noUrl: boolean = true;
+
   
   constructor(
     private moviesSearchServices: MoviesSearchService,
     private spinner: NgxSpinnerService,
     private route: ActivatedRoute, 
+    private router: Router,
   ) { }
   onScroll() {
     this.i++;
@@ -62,6 +65,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.getUrl();
     if (this.url){
+      this.noUrl = false;
       this.searchMovies()
     }
   }

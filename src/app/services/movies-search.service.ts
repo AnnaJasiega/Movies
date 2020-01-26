@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MoviesSearchService {
-
+  web:string = 'http://www.omdbapi.com/'
   apiKey:string = '&apikey=49390c5c';
 
   constructor(

@@ -12,7 +12,7 @@
     
 }
 .starLoc {
-    width: 30%;
+    width: 35%;
     position: relative;
     display: flex;
     align-content: flex-end;
@@ -40,7 +40,7 @@
     width: 100%;    
 }
 .details {
-    width: 70%;
+    width: 65%;
     padding-left: 15px;
 }
 span{

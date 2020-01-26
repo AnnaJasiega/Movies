@@ -1,4 +1,4 @@
-<div class='container'>
+<div class='container' *ngIf='movie'>
     <div [ngClass]="{'opacity' : isVisible}">
         <button type="button" class="btn btn-danger btn-lg btn-block" routerLink='/{{url}}'>Back</button>
         <section class='section1'>
@@ -16,8 +16,12 @@
                     Genre: <span>{{movie.Genre}}</span>
                     Language: <span>{{movie.Language}}</span>
                 </p>
-                <h2 class='borders'>Director</h2>
-                <div class="director-inner">
+                <p class='text-danger' (click)=seeMoreClick();>More...</p>
+                <p class="text-danger" *ngIf=(seeMore)>
+                   {{movie.Plot}}
+                </p>
+                <h2 class='borders' *ngIf=(!seeMore)>Director</h2>
+                <div class="director-inner" *ngIf=(!seeMore)>
                     <div class="director row" *ngFor='let director of directors'>
                         <img class='photo'>
                         <span>{{director}}</span>    

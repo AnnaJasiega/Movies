@@ -1,6 +1,7 @@
 .container {
     overflow-y: scroll;
     height: 400px;
+    scrollbar-width: thin;
     scrollbar-width: none;   
 }
 td {
