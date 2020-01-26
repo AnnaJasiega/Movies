@@ -1,7 +1,6 @@
 <div class='container' routerLink='/{{url}}/{{id}}'>
     <div class='img'> <img src="{{poster}}">
       <div class='visible'>
-        <div class='rating'></div>
         <div *ngFor='let rating of ratings' class='rating'> &hearts; {{rating.Value}}</div>
       </div>
     </div>

@@ -32,6 +32,7 @@
                 Sorry, unfortunately there is no movie you are looking for. <br> Try to change the criteria
             </div>
             <div *ngIf="moviesAll[0].Response =='True'">
+                <div class='text-secondary total'>Total results - <span class='text-danger'>{{moviesAll[0].totalResults}}</span></div>
                 <ul class="list-group" *ngFor='let movies of moviesAll'>
                     <li class="list-group-item" *ngFor="let movie of movies.Search">
                         <app-search-result

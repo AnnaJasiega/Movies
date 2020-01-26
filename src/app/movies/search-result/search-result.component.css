@@ -15,8 +15,13 @@ img {
 
 .img {
     height: 100%;
-    width: 100px;
+    width: 130px;
     position: relative;
+    overflow: hidden;
+}
+img:hover {
+    transform: scale(1.2);
+    transition: all .2s linear;
 }
 .info {
     width:75%;
@@ -31,7 +36,6 @@ p {
     bottom: 0px;
     left: 0px;
     width: 100%;
-    height: 50%;
     border-top-right-radius: 100%;
     display: flex;
     align-items: flex-end;
@@ -43,6 +47,7 @@ p {
 .rating {
    font-size: large;
    color: white;
+   width: 100%;
    margin: 0;
    padding: 0;
 }
