@@ -22,6 +22,7 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.5",
     "bootstrap": "^4.4.1",
     "ngx-infinite-scroll": "^8.0.1",
+    "ngx-scroll-event": "^1.0.8",
     "ngx-spinner": "^8.1.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

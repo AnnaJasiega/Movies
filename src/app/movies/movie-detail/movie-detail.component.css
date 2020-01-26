@@ -1,14 +1,14 @@
-
 .container {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 20px;
 }
+
 .section1 {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    margin-top: 10px;
     
 }
 .starLoc {
@@ -20,7 +20,7 @@
 }
 .starFav{
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     right: 0px;
     text-align: end;
     display: inline-block;
@@ -55,14 +55,14 @@ span{
 }
 .director-inner {
     display: flex;
-    justify-content: left;
-    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-wrap: wrap;
     padding-left: 16px;
 }
 .director {
     display: flex;
     flex-wrap: wrap;
-    width: 190px;
+    width: 200px;
     
 }
 .portal-rating {

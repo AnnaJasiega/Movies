@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { MoviesSearchService } from '../../services/movies-search.service';
 
@@ -14,6 +15,7 @@ export class SearchResultComponent implements OnInit {
   @Input('id') id:string;
 
   private movie:any = null;
+  private url:any = '';
  
   private ratings:[];
   
@@ -22,13 +24,16 @@ export class SearchResultComponent implements OnInit {
   }
   
   constructor(private moviesSearchService: MoviesSearchService,
+              private route: ActivatedRoute, 
               ) { }
 
   ngOnInit() { 
     this.moviesSearchService.getMovieById(this.id).subscribe(resp => {
     this.movie = resp; 
     this.ratings = this.movie.Ratings.sort(this.compareLength);
-     
-    })
+    });
+    this.route.paramMap.subscribe(params => {
+      this.url = params.get('url');
+    });
   }
 }

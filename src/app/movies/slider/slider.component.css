@@ -14,7 +14,7 @@
 .actor {
     display: flex;
     flex-wrap: wrap;
-    width: 190px;
+    width: 180px;
 }
 span{
     padding-right: 5px;

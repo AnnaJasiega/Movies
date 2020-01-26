@@ -1,5 +1,6 @@
 <div class='container'>
     <div [ngClass]="{'opacity' : isVisible}">
+        <button type="button" class="btn btn-danger btn-lg btn-block" routerLink='/{{url}}'>Back</button>
         <section class='section1'>
             <div class='starLoc' (click)="isClicked = !isClicked" [class.clikedStar]="isClicked">
                 <img src='{{movie.Poster}}' class='poster' (click)='seePoster()'>

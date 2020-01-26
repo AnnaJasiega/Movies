@@ -28,3 +28,13 @@
 li:nth-child(odd) {
     background: whitesmoke;
 }
+
+.isScrolled {
+   z-index: 2;
+   position: fixed;
+   top: 0px;
+   left: 15%;
+   width: 70%;
+   margin: 0 auto;
+   background: white;
+}

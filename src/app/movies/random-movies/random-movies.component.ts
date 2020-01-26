@@ -14,7 +14,7 @@ private randomWords: Array<String> = ['baby', 'moon', 'light',
 'city', 'work', 'sun', 'break', 'trip', 'sea', 'black', 'white', 
 'color', 'dress', 'blue', 'lady', 'boy', 'people', 'art', 'history',
 'way',  'music', 'bird', 'problem', 'nature', 'soviety', 'story',
-'thing', 'freedom', 'paper', 'exam'];
+'thing', 'freedom', 'paper'];
 private moviesAll:Array<Object> = [];
 
 
