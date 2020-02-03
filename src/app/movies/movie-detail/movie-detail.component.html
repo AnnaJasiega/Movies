@@ -1,41 +1,46 @@
 <div class='container' *ngIf='movie'>
     <div [ngClass]="{'opacity' : isVisible}">
-        <button type="button" class="btn btn-danger btn-lg btn-block" routerLink='/{{url}}'>Back</button>
+        <br>
+        <button type="button" class="btn btn-color btn-lg btn-block" routerLink='/{{url}}'>Back</button>
         <section class='section1'>
             <div class='starLoc' (click)="isClicked = !isClicked" [class.clikedStar]="isClicked">
                 <img src='{{movie.Poster}}' class='poster' (click)='seePoster()'>
                 <div class = 'starFav'>&#9733;</div>
             </div>
             <div class='details'>
-                <h1 class='borders'>{{movie.Title}}</h1>
-                <p class="text-secondary">
-                    Released: <span>{{movie.Released}}</span>
-                    Time: <span>{{movie.Runtime}}</span>
-                </p>
-                <p class="text-secondary">
-                    Genre: <span>{{movie.Genre}}</span>
-                    Language: <span>{{movie.Language}}</span>
-                </p>
-                <p class='text-danger' (click)=seeMoreClick();>More...</p>
-                <p class="text-danger" *ngIf=(seeMore)>
-                   {{movie.Plot}}
-                </p>
-                <h2 class='borders' *ngIf=(!seeMore)>Director</h2>
-                <div class="director-inner" *ngIf=(!seeMore)>
-                    <div class="director row" *ngFor='let director of directors'>
-                        <img class='photo'>
-                        <span>{{director}}</span>    
+                <div class='sectionRadius'> 
+                    <h1 class='borders'>{{movie.Title}}</h1>
+                    <p class="text-secondary">
+                        Released: <span>{{movie.Released}}</span>
+                        Time: <span>{{movie.Runtime}}</span>
+                    </p>
+                    <p class="text-secondary">
+                        Genre: <span>{{movie.Genre}}</span>
+                        Language: <span>{{movie.Language}}</span>
+                    </p>
+                    <p  (click)=seeMoreClick();>More...</p>
+                    <p  *ngIf=(seeMore)>
+                    {{movie.Plot}}
+                    </p>
+                </div>
+                <div class='sectionRadius'> 
+                    <h2 class='borders' *ngIf=(!seeMore)>Director</h2>
+                    <div class="director-inner" *ngIf=(!seeMore)>
+                        <div class="director row" *ngFor='let director of directors'>
+                            <img class='photo'>
+                            <span>{{director}}</span>    
+                        </div>
                     </div>
                 </div>
             </div>          
         </section>
-        <section>
+        <section class='sectionRadius'>
         <h1 class='borders'>Actors</h1>
         <app-slider 
         [actors]='actors'>
         </app-slider>
         </section>
-        <section>
+        <section class='sectionRadius'>
             <h1 class='borders'>
                 Ratings
             </h1>

@@ -8,7 +8,7 @@
                 infiniteScroll            
                 (scrolled)="onScrolled()"
             >
-            <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
+            <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1">
             <input [(ngModel)]="year" type="text" class="form-control" placeholder="Year" aria-label="Example text with button addon" aria-describedby="button-addon1">   
             <select [(ngModel)]="type" type="text" class="custom-select form-control" placeholder="Movie, series, episode">
                 <option value="Movie" class='form-control'>Movie</option>
@@ -16,7 +16,7 @@
                 <option value="Episode" class='form-control'>Episode</option>
             </select>
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" routerLink='/?s={{title}}&y={{year}}&type={{type}}' (click)=click()>Search</button>
+                <button class="btn btn-outline-secondary btnBg" type="button" routerLink='/?s={{title}}&y={{year}}&type={{type}}' (click)=click()>Search</button>
             </div>
         </div>    
         <ngx-spinner
@@ -32,9 +32,9 @@
                 Sorry, unfortunately there is no movie you are looking for. <br> Try to change the criteria
             </div>
             <div *ngIf="moviesAll[0].Response =='True'">
-                <div class='text-secondary total'>Total results - <span class='text-danger'>{{moviesAll[0].totalResults}}</span></div>
+                <div class='text-secondary total'>Total results - <span class='text'>{{moviesAll[0].totalResults}}</span></div>
                 <ul class="list-group" *ngFor='let movies of moviesAll'>
-                    <li class="list-group-item" *ngFor="let movie of movies.Search">
+                    <li class="list-group-item" *ngFor="let movie of movies.Search">                        
                         <app-search-result
                         [title]='movie.Title'
                         [year]='movie.Year'

@@ -1,28 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 200px;
+    font-family: 'Roboto', sans-serif;  
     @media screen and (max-width: 568px) {
     flex-wrap: wrap;
     height: 350px;
     }
 }
+.text {
+    color: #4f9b94;
+}
 img {
-    height: 100%;    
+    height: 100%; 
+    box-shadow: 0px 0px 10px 10px rgb(72,72,72, 0.75);   
 }
 
 .img {
     height: 100%;
-    width: 130px;
+    width: auto;
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 0px 0.7em 0.2em rgb(72,72,72, 0.75);  
 }
-img:hover {
-    transform: scale(1.2);
-    transition: all .2s linear;
-}
+
 .info {
     width:75%;
     height: 100%;
@@ -35,18 +40,18 @@ p {
     position: absolute;
     bottom: 0px;
     left: 0px;
-    width: 100%;
-    border-top-right-radius: 100%;
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
     margin:0;
     padding: 0;
-    background: rgba(255,68,68, 0.9);   
+    background: rgb(79,155,148,0.75);
+    box-shadow: 0 0 1em 0.5em  rgb(79,155,148,0.75);
 }
 .rating {
    font-size: large;
-   color: white;
+   font-family: 'Roboto', sans-serif;
+   color: #212121;
    width: 100%;
    margin: 0;
    padding: 0;

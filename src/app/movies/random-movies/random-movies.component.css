@@ -1,19 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 .container {
-    overflow-y: scroll;
-    height: 400px;
-    scrollbar-width: thin;
-    scrollbar-width: none;   
+    width: 100%;
+    font-family: 'Roboto', sans-serif;  
 }
-td {
+.movie{
     float: left;
-    margin:0;
-    background-image: url('../../img/movietape.png');
-    background-repeat: repeat-y;
-    background-size: contain;
-    background-attachment: local;
-    text-align: center;
 }
 img {
-    width: 73%;   
+    width: 100%;  
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px rgb(0,0,0,0.75);
+    float: left;
 }
 

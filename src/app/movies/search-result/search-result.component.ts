@@ -22,7 +22,6 @@ export class SearchResultComponent implements OnInit {
   compareLength(a,b){
     return a.Value.length - b.Value.length
   }
-  
   constructor(private moviesSearchService: MoviesSearchService,
               private route: ActivatedRoute, 
               ) { }

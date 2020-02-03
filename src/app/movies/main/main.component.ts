@@ -42,6 +42,7 @@ export class MainComponent implements OnInit {
       this.url = params.get('url');
       });
   }
+ 
   click(){
     this.moviesAll = [];
     this.searchMovies();
