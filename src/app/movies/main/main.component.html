@@ -1,57 +1,57 @@
-    <div class='container' 
-    (scrolledUp)="offScrolled()"
-    >
-        <div class='header'>
-            Let's watch something
-        </div>
-        <div [className]="scrolled? 'input-group isScrolled mb-3' : 'input-group mb-3'"
-                infiniteScroll            
-                (scrolled)="onScrolled()"
-            >
-            <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <input [(ngModel)]="year" type="text" class="form-control" placeholder="Year" aria-label="Example text with button addon" aria-describedby="button-addon1">   
-            <select [(ngModel)]="type" type="text" class="custom-select form-control" placeholder="Movie, series, episode">
-                <option value="Movie" class='form-control'>Movie</option>
-                <option value="Series" class='form-control'>Series</option>
-                <option value="Episode" class='form-control'>Episode</option>
-            </select>
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary btnBg" type="button" routerLink='/?s={{title}}&y={{year}}&type={{type}}' (click)=click()>Search</button>
-            </div>
-        </div>    
-        <ngx-spinner
-        bdColor= "rgba(255, 255, 255, 0.9)"
-        size="medium"
-        color="gray"
-        type="ball-fall"
-        >
-        </ngx-spinner>      
-        <app-random-movies *ngIf="noUrl"></app-random-movies>
-        <div *ngIf="moviesAll[0]">
-            <div *ngIf="moviesAll[0].Response =='False'" class='false'>
-                Sorry, unfortunately there is no movie you are looking for. <br> Try to change the criteria
-            </div>
-            <div *ngIf="moviesAll[0].Response =='True'">
-                <div class='text-secondary total'>Total results - <span class='text'>{{moviesAll[0].totalResults}}</span></div>
-                <ul class="list-group" *ngFor='let movies of moviesAll'>
-                    <li class="list-group-item" *ngFor="let movie of movies.Search">                        
-                        <app-search-result
-                        [title]='movie.Title'
-                        [year]='movie.Year'
-                        [poster]='movie.Poster'
-                        [id]='movie.imdbID'
-                        >
-                        </app-search-result>                      
-                    </li>
-                    <div
-                    infiniteScroll
-                    [infiniteScrollDistance]="2"
-                    [infiniteScrollThrottle]="50"
-                    (scrolled)="onScroll()"
-                    >
-                    </div>
-                </ul>
-           </div>
-        </div>    
+<div class='container' 
+(scrolledUp)="offScrolled()"
+>
+    <div class='header'>
+        Let's watch something
     </div>
+    <div [className]="scrolled? 'input-group isScrolled mb-3' : 'input-group mb-3'"
+         infiniteScroll            
+        >
+        <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1">
+        <input [(ngModel)]="year" type="text" class="form-control" placeholder="Year" aria-label="Example text with button addon" aria-describedby="button-addon1">   
+        <select [(ngModel)]="type" type="text" class="custom-select form-control" placeholder="Movie, series, episode">
+            <option value="Movie" class='form-control'>Movie</option>
+            <option value="Series" class='form-control'>Series</option>
+            <option value="Episode" class='form-control'>Episode</option>
+        </select>
+        <div class="input-group-append">
+            <button class="btn btnBg" type="button" routerLink='/?s={{title}}&y={{year}}&type={{type}}' (click)=click()>Search</button>
+        </div>
+    </div>    
+    <ngx-spinner
+    bdColor= "rgba(255, 255, 255, 0.9)"
+    size="medium"
+    color="gray"
+    type="ball-fall"
+    >
+    </ngx-spinner>      
+    <app-random-movies *ngIf="noUrl" class='a'></app-random-movies>
+    <div *ngIf="moviesAll[0]" class='a'>
+        <ng-template #false class='false'>
+            Sorry, unfortunately there is no movie you are looking for. <br> 
+            Try to change the criteria
+        </ng-template>
+        <div *ngIf="moviesAll[0].Response =='True'; else false">
+            <div class='total'>Total results - <span class='text'>{{moviesAll[0].totalResults}}</span></div>
+            <ul class="list-group" *ngFor='let movies of moviesAll'>
+                <li class="list-group-item" *ngFor="let movie of movies.Search">                        
+                    <app-search-result
+                    [title]='movie.Title'
+                    [year]='movie.Year'
+                    [poster]='movie.Poster'
+                    [id]='movie.imdbID'
+                    >
+                    </app-search-result>                      
+                </li>
+                <div
+                infiniteScroll
+                [infiniteScrollDistance]="2"
+                [infiniteScrollThrottle]="50"
+                (scrolled)="onScroll()"
+                >
+                </div>
+            </ul>
+       </div>
+    </div>    
+</div>
 
