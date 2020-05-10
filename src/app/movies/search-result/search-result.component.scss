@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import '../../../theme.scss';
 
 .container {
     display: flex;
@@ -6,14 +6,14 @@
     align-items: center;
     width: 100%;
     height: 200px;
-    font-family: 'Roboto', sans-serif;  
+    font-family: $special-font;  
     @media screen and (max-width: 568px) {
     flex-wrap: wrap;
     height: 350px;
     }
 }
 .text {
-    color: #4f9b94;
+    color: $secondary;
 }
 img {
     height: 100%; 
@@ -37,6 +37,7 @@ p {
     padding: 0;
 }
 .visible {
+ 
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -45,12 +46,12 @@ p {
     flex-wrap: wrap;
     margin:0;
     padding: 0;
-    background: rgb(79,155,148,0.75);
-    box-shadow: 0 0 1em 0.5em  rgb(79,155,148,0.75);
+    background: $secondary;
+    box-shadow: 0 0 1em 0.5em  $secondary;
 }
 .rating {
    font-size: large;
-   font-family: 'Roboto', sans-serif;
+   font-family: $special-font; 
    color: #212121;
    width: 100%;
    margin: 0;

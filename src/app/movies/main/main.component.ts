@@ -19,6 +19,7 @@ export class MainComponent implements OnInit {
   scrolled: boolean = false;
   url: string = '';
   noUrl: boolean = true;
+  mouseover: boolean = false;
 
   
   constructor(

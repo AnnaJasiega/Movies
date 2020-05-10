@@ -16,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { PageNotFoundComponent } from './movies/page-not-found/page-not-found.component';
 import { SliderComponent } from './movies/slider/slider.component';
-import { RandomMoviesComponent } from './movies/random-movies/random-movies.component'
+import { RandomMoviesComponent } from './movies/random-movies/random-movies.component';
+import { NavigationComponent } from './movies/navigation/navigation.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RandomMoviesComponent } from './movies/random-movies/random-movies.comp
     MovieDetailComponent,
     PageNotFoundComponent,
     SliderComponent,
-    RandomMoviesComponent
+    RandomMoviesComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
