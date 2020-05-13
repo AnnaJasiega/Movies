@@ -6,7 +6,7 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { ScrollEventModule } from 'ngx-scroll-event'
+//import { ScrollEventModule } from 'ngx-scroll-event'
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './movies/main/main.component';
@@ -39,7 +39,7 @@ import { NavigationComponent } from './movies/navigation/navigation.component'
     NgxSpinnerModule,
     BrowserAnimationsModule,
     InfiniteScrollModule,
-    ScrollEventModule
+    //ScrollEventModule
   ],
   providers: [MoviesSearchService],
   bootstrap: [AppComponent]
