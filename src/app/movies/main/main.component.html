@@ -4,9 +4,7 @@
     <div class='header'>
         Let's watch something
     </div>
-    <div [className]="scrolled? 'input-group isScrolled mb-3' : 'input-group mb-3'"
-         infiniteScroll            
-        >
+    <div class='input-group'>
         <input [(ngModel)]="title" type="text" class="form-control" placeholder="Title" aria-label="Example text with button addon" aria-describedby="button-addon1">
         <input [(ngModel)]="year" type="text" class="form-control" placeholder="Year" aria-label="Example text with button addon" aria-describedby="button-addon1">   
         <select [(ngModel)]="type" type="text" class="custom-select form-control" placeholder="Movie, series, episode">
@@ -25,8 +23,8 @@
     type="ball-fall"
     >
     </ngx-spinner>      
-    <app-random-movies *ngIf="noUrl" class='a'></app-random-movies>
-    <div *ngIf="moviesAll[0]" class='a'>
+    <app-random-movies class='a'  *ngIf="noUrl"></app-random-movies>
+    <div *ngIf="moviesAll[0]">
         <ng-template #false class='false'>
             Sorry, unfortunately there is no movie you are looking for. <br> 
             Try to change the criteria

@@ -5,7 +5,7 @@ import { MoviesSearchService } from '../../services/movies-search.service';
 @Component({
   selector: 'app-random-movies',
   templateUrl: './random-movies.component.html',
-  styleUrls: ['./random-movies.component.css']
+  styleUrls: ['./random-movies.component.scss']
 })
 export class RandomMoviesComponent implements OnInit {
 private randomWords: Array<String> = ['baby', 'moon', 'light', 

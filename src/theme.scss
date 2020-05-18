@@ -5,7 +5,12 @@
 $background-color: #e2ede8;
 $primary: rgba(181,58,120);
 $secondary: rgba(38,171,176);
-$background-linear: linear-gradient(135deg, $secondary 0%, $primary 100%);
+$background-linear: linear-gradient(135deg, rgba($secondary, 0.5) 0%, rgba($primary, 0.5) 100%);
 $light-box-shadow: 0px 0.1em 0.6em lightgray;
 $box-shadow: 0px 0px 10px 1px rgb(33,33,33,0.75);
 $special-font: 'Lobster', cursive;
+
+$max-mobile: 568px;
+$min-tablet: 569px;
+$max-tablet: 700px;
+$min-desktop: 701px;

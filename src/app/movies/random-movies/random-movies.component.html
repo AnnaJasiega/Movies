@@ -1,8 +1,8 @@
-    <table class ='container' *ngFor='let movies of moviesAll'>
-        <td class='col-sm-3 movie' *ngFor='let movies of moviesAll'>
+<div class ='container' *ngFor='let movies of moviesAll'>
+    <div class='movie' *ngFor='let movies of moviesAll'>
         <div *ngFor='let movie of movies.Search' >
             <img src='{{movie.Poster}}' routerLink='/movies/{{movie.imdbID}}'>
         </div>
-        </td>
-    </table >
+    </div>
+</div >
 
