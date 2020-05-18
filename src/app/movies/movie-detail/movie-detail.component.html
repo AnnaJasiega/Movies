@@ -6,6 +6,8 @@
             <div class='starLoc' (click)="isClicked = !isClicked" [class.clikedStar]="isClicked">
                 <img src='{{movie.Poster}}' class='poster' (click)='seePoster()'>
                 <div class = 'starFav'>&#9733;</div>
+                <div>
+                </div>
             </div>
             <div class='details'>
                 <div class='sectionRadius'> 
@@ -44,7 +46,6 @@
             <h1 class='borders'>
                 Ratings
             </h1>
-
             <div class='row-rating' *ngIf="movie.imdbRating != 'N/A'">
                 <div class='portal-rating'>IMDb:</div>
                 <div class='progress-container'>

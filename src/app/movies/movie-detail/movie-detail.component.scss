@@ -15,12 +15,11 @@
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
-    border-radius: 0.5em;
-  
-    
+    border-radius: 0.5em;    
 }
 .poster{
-    width: 100%;    
+    width: 100%;
+      height: auto; 
 }
 img {
     border-radius: 0.5em;
@@ -28,15 +27,19 @@ img {
 }
 .starLoc {
     width: 35%;
+    height: auto;
+   
     position: relative;
     display: flex;
     align-content: flex-end;
-    
+    @media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+        width: 70%;
+    }
 }
 .starFav{
     position: absolute;
-    bottom: 5px;
-    right: 0px;
+    top: 0px;
+    left: 0px;
     text-align: end;
     display: inline-block;
     font-size: 6rem;

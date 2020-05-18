@@ -23,8 +23,8 @@
     type="ball-fall"
     >
     </ngx-spinner>      
-    <app-random-movies class='a'  *ngIf="noUrl"></app-random-movies>
-    <div *ngIf="moviesAll[0]">
+    <app-random-movies *ngIf="noUrl"></app-random-movies>
+    <div class ='a' *ngIf="moviesAll[0]">
         <ng-template #false class='false'>
             Sorry, unfortunately there is no movie you are looking for. <br> 
             Try to change the criteria
