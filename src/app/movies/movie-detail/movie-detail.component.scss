@@ -38,11 +38,11 @@ img {
 }
 .starFav{
     position: absolute;
-    top: 0px;
-    left: 0px;
+    bottom: 0px;
+    right: 10px;
     text-align: end;
     display: inline-block;
-    font-size: 6rem;
+    font-size: 5rem;
 }
 .clikedStar {
     color: yellow;

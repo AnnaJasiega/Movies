@@ -23,7 +23,7 @@ export class MoviesSearchService {
   public getMovieById(id): Observable<Movie> {
     return this.http.get<Movie>('http://www.omdbapi.com/?i='+id+'&plot=full'+ this.apiKey)
   }
-  public getRandom(word): Observable<Movie> {
-    return this.http.get<Movie>('http://www.omdbapi.com/?s='+word+'&plot=full'+ this.apiKey)
+  public getRandom(word, type): Observable<Movie> {
+    return this.http.get<Movie>('http://www.omdbapi.com/?s='+word+'&type=' + type + '&plot=full'+ this.apiKey)
   }
 }

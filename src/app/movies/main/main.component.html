@@ -22,9 +22,14 @@
     color="gray"
     type="ball-fall"
     >
-    </ngx-spinner>      
-    <app-random-movies *ngIf="noUrl"></app-random-movies>
-    <div class ='a' *ngIf="moviesAll[0]">
+    </ngx-spinner>
+    <ng-template #random>     
+        <app-random-movies 
+            *ngFor='let type of types'
+            [type]='type'
+        ></app-random-movies>
+    </ng-template>
+    <div *ngIf="!noUrl; else random">
         <ng-template #false class='false'>
             Sorry, unfortunately there is no movie you are looking for. <br> 
             Try to change the criteria

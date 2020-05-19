@@ -16,8 +16,8 @@ export class SearchResultComponent implements OnInit {
 
   private movie:any = null;
   private url:any = '';
- 
   private ratings:[];
+  private plot:string = "";
   
   compareLength(a,b){
     return a.Value.length - b.Value.length
@@ -30,6 +30,7 @@ export class SearchResultComponent implements OnInit {
     this.moviesSearchService.getMovieById(this.id).subscribe(resp => {
     this.movie = resp; 
     this.ratings = this.movie.Ratings.sort(this.compareLength);
+    this.plot = this.movie.Plot;
     });
     this.route.paramMap.subscribe(params => {
       this.url = params.get('url');

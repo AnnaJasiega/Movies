@@ -1,8 +1,9 @@
-<div class ='container' *ngFor='let movies of moviesAll'>
+<div class ='container'>
+    <h1>{{type}}</h1>
     <div class='movie' *ngFor='let movies of moviesAll'>
-        <div *ngFor='let movie of movies.Search' >
-            <img src='{{movie.Poster}}' routerLink='/movies/{{movie.imdbID}}'>
-        </div>
+       
+            <img *ngFor='let movie of movies.Search' src='{{movie.Poster}}' routerLink='/movies/{{movie.imdbID}}'>
+      
     </div>
 </div >
 
