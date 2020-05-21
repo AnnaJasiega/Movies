@@ -17,7 +17,8 @@ import { MovieDetailComponent } from './movies/movie-detail/movie-detail.compone
 import { PageNotFoundComponent } from './movies/page-not-found/page-not-found.component';
 import { SliderComponent } from './movies/slider/slider.component';
 import { RandomMoviesComponent } from './movies/random-movies/random-movies.component';
-import { NavigationComponent } from './movies/navigation/navigation.component'
+import { NavigationComponent } from './movies/navigation/navigation.component';
+import { SummaryPipe } from './pipes/summary.pipe'
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { NavigationComponent } from './movies/navigation/navigation.component'
     SliderComponent,
     RandomMoviesComponent,
     NavigationComponent,
+    SummaryPipe,
   ],
   imports: [
     BrowserModule,

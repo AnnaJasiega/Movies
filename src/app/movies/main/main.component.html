@@ -1,6 +1,4 @@
-<div class='container' 
-(scrolledUp)="offScrolled()"
->
+<div class='container'>
     <div class='header'>
         Let's watch something
     </div>
@@ -49,7 +47,7 @@
                 </li>
                 <div
                 infiniteScroll
-                [infiniteScrollDistance]="2"
+                [infiniteScrollDistance]="1"
                 [infiniteScrollThrottle]="50"
                 (scrolled)="onScroll()"
                 >

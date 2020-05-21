@@ -36,9 +36,7 @@ export class MainComponent implements OnInit {
   onScrolled(){
     this.scrolled = true;
   }
-  offScrolled(){
-    this.scrolled = false;
-  }
+ 
   getUrl(){
     this.route.paramMap.subscribe(params => {
       this.url = params.get('url');
