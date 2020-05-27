@@ -55,14 +55,23 @@ export class MainComponent implements OnInit {
       this.spinner.hide();
     }, 700);
     setTimeout(() =>{
-      this.moviesSearchServices.getData(this.url, this.i).subscribe((resp: {}) => 
-      this.moviesAll.push(resp));
+      this.addMovies();
     },1000)
     } else {
-      this.moviesSearchServices.getData(this.url, this.i).subscribe((resp: {}) => 
-      this.moviesAll.push(resp));
+      this.addMovies();
     }
   }
+
+  addMovies() {
+    this.moviesSearchServices.getData(this.url, this.i).subscribe(
+      response => {
+        this.moviesAll.push(response)
+      },
+      error => {
+      alert ('An unexpected error occured')
+      },
+  )};
+
   ngOnInit() {
     this.getUrl();
     if (this.url){
