@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -19,6 +19,7 @@ import { SliderComponent } from './movies/slider/slider.component';
 import { RandomMoviesComponent } from './movies/random-movies/random-movies.component';
 import { NavigationComponent } from './movies/navigation/navigation.component';
 import { SummaryPipe } from './pipes/summary.pipe'
+import { AppErrorHandler } from './common/app-error-handler';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,12 @@ import { SummaryPipe } from './pipes/summary.pipe'
     InfiniteScrollModule,
     ScrollEventModule
   ],
-  providers: [MoviesSearchService],
+  providers: [
+    MoviesSearchService,
+    { provide: ErrorHandler, useClass: AppErrorHandler }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//custom Pipes, error handling,

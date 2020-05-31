@@ -40,7 +40,7 @@ export class MainComponent implements OnInit {
   getUrl(){
     this.route.paramMap.subscribe(params => {
       this.url = params.get('url');
-      });
+    });
   }
  
   click(){
@@ -63,14 +63,11 @@ export class MainComponent implements OnInit {
   }
 
   addMovies() {
-    this.moviesSearchServices.getData(this.url, this.i).subscribe(
-      response => {
-        this.moviesAll.push(response)
-      },
-      error => {
-      alert ('An unexpected error occured')
-      },
-  )};
+    this.moviesSearchServices.getData(this.url, this.i)
+    .subscribe(
+      response => {this.moviesAll.push(response)
+    })
+   };
 
   ngOnInit() {
     this.getUrl();
