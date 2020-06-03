@@ -35,12 +35,12 @@ export class MoviesSearchService {
 
   getAll(url) {
     return this.http.get<Movie>(url)
-    .pipe(catchError(this.handleError))
+   //.pipe(catchError(this.handleError))
   }
 
-  private handleError(error: Response) {
+  private handleError(error) {
     if (error.status === 400)
-    return throwError(new BadInput(error.json()));
+    return throwError(new BadInput(error.json()))
 
     if (error.status === 404)
     return throwError(new NotFoundError())

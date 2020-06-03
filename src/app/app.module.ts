@@ -14,12 +14,17 @@ import { SearchResultComponent } from './movies/search-result/search-result.comp
 import { MoviesSearchService } from 'src/app/services/movies-search.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
-import { PageNotFoundComponent } from './movies/page-not-found/page-not-found.component';
+
 import { SliderComponent } from './movies/slider/slider.component';
 import { RandomMoviesComponent } from './movies/random-movies/random-movies.component';
 import { NavigationComponent } from './movies/navigation/navigation.component';
 import { SummaryPipe } from './pipes/summary.pipe'
 import { AppErrorHandler } from './common/app-error-handler';
+import { LoginComponent } from './auth/login/login.component';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -27,11 +32,11 @@ import { AppErrorHandler } from './common/app-error-handler';
     MainComponent,
     SearchResultComponent,
     MovieDetailComponent,
-    PageNotFoundComponent,
     SliderComponent,
     RandomMoviesComponent,
     NavigationComponent,
     SummaryPipe,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,11 +47,15 @@ import { AppErrorHandler } from './common/app-error-handler';
     NgxSpinnerModule,
     BrowserAnimationsModule,
     InfiniteScrollModule,
-    ScrollEventModule
+    ScrollEventModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    
   ],
   providers: [
     MoviesSearchService,
-    { provide: ErrorHandler, useClass: AppErrorHandler }
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    AngularFireAuth,
   ],
   bootstrap: [AppComponent]
 })
