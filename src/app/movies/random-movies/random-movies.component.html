@@ -1,9 +1,9 @@
 <div class ='container'>
-    <h1>{{type}}</h1>
+    <h1>{{type}} with {{ randomWord }}</h1>
     <div class='movie' *ngFor='let movies of moviesAll'>
-       
-            <img *ngFor='let movie of movies.Search' src='{{movie.Poster}}' routerLink='/movies/{{movie.imdbID}}'>
-      
+       <div class='img' *ngFor='let movie of movies.Search'>
+           <img *ngIf='movie.Poster != "N/A"' src='{{movie.Poster}}' routerLink='/movies/{{movie.imdbID}}'>
+       </div>     
     </div>
 </div >
 

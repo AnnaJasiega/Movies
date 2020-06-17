@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
   url: string = '';
   noUrl: boolean = true;
   mouseover: boolean = false;
-  types: Array<String> = ["Movie", "Series", "Episode"];
+  types: Array<String> = ["Movie", "Series", "Movie", "Series", "Movie", "Series",];
 
   
   constructor(

@@ -9,13 +9,14 @@ import { MoviesSearchService } from '../../services/movies-search.service';
 })
 export class RandomMoviesComponent implements OnInit {
 
-  @Input('type') type: string;
+  @Input('type') type: String;
+  randomWord: String= '';
   private randomWords: Array<String> = ['baby', 'moon', 'light', 
     'movie', 'day', 'animal', 'tree', 'world', 'chair', 'school', 
     'meat', 'hall', 'unit', 'computer', 'light', 'summer', 'year', 
     'city', 'work', 'sun', 'break', 'trip', 'sea', 'black', 'white', 
     'color', 'dress', 'blue', 'lady', 'boy', 'people', 'art', 'history',
-    'way',  'music', 'bird', 'problem', 'nature', 'soviety', 'story',
+    'way',  'music', 'bird', 'problem', 'nature', 'story',
     'thing', 'freedom', 'paper'];
   private moviesAll:Array<Object> = [];
 
@@ -28,7 +29,8 @@ export class RandomMoviesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getRandom(this.randomWords[this.getRandomNumber()], this.type).subscribe((resp) => {
+    this.randomWord = this.randomWords[this.getRandomNumber()];
+    this.service.getRandom(this.randomWord, this.type).subscribe((resp) => {
       this.moviesAll.push(resp); 
     })
   }

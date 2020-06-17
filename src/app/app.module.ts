@@ -67,4 +67,4 @@ import { FavComponent } from './auth/fav/fav.component';
 })
 export class AppModule { }
 
-//custom Pipes, error handling, authGuard
+//custom Pipes, error handling, authGuard, localStorage, redirecting after loggin,  
