@@ -10,7 +10,8 @@ import { MoviesSearchService } from '../../services/movies-search.service';
 export class RandomMoviesComponent implements OnInit {
 
   @Input('type') type: String;
-  randomWord: String= '';
+  randomWord: String;
+  init: boolean = false;
   private randomWords: Array<String> = ['baby', 'moon', 'light', 
     'movie', 'day', 'animal', 'tree', 'world', 'chair', 'school', 
     'meat', 'hall', 'unit', 'computer', 'light', 'summer', 'year', 
@@ -21,9 +22,9 @@ export class RandomMoviesComponent implements OnInit {
   private moviesAll:Array<Object> = [];
 
 
-  constructor( private service: MoviesSearchService) { 
-    
+  constructor( private service: MoviesSearchService) {  
   }
+
   getRandomNumber(){
     return Math.floor(Math.random() * this.randomWords.length);
   }
@@ -33,6 +34,7 @@ export class RandomMoviesComponent implements OnInit {
     this.service.getRandom(this.randomWord, this.type).subscribe((resp) => {
       this.moviesAll.push(resp); 
     })
+    this.init = true;
   }
 
 }

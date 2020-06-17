@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service'
+import { AuthService } from '../../services/auth.service';
+import { Router, RouterStateSnapshot } from '@angular/router';
+
 
 
 @Component({
@@ -10,11 +12,14 @@ import { AuthService } from '../../services/auth.service'
 export class NavigationComponent {
   name: string='anonym';
  
-  constructor(private auth: AuthService) { 
+  constructor(private auth: AuthService, private router: Router) { 
   }
 
   logout() {
     this.auth.logout();
   }
 
+  login(state: RouterStateSnapshot){
+    this.router.navigate(['/login'], { queryParams: {returnUrl: state.url}});
+  }  
 }

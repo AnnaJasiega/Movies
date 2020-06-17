@@ -1,5 +1,9 @@
 div {
     width: 1000px;
-
-  
+}
+.dropdown-item {
+    width: 50px;
+}
+.dropdown-menu {
+    width: 50px;
 }
