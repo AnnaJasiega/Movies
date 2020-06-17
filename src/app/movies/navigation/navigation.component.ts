@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase';
-import { Observable } from 'rxjs'
+import { AuthService } from '../../services/auth.service'
 
 
 @Component({
@@ -11,14 +9,12 @@ import { Observable } from 'rxjs'
 })
 export class NavigationComponent {
   name: string='anonym';
-  user$: Observable<firebase.User>;
-
-  constructor(private afAuth: AngularFireAuth) { 
-    this.user$ = afAuth.authState;
+ 
+  constructor(private auth: AuthService) { 
   }
 
   logout() {
-    this.afAuth.auth.signOut();
+    this.auth.logout();
   }
 
 }

@@ -1,18 +1,21 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
      <div class="collapse navbar-collapse" id="navbarsExample03">
       <ul class="navbar-nav mr-auto">
+        <li><a class="navbar-brand" routerLink='/movies'>Main</a></li>
         <li class="nav-item active">
+  
           <ng-template #anonymous>
             <a class="navbar-brand" routerLink='/login'>Login</a>
             <a class="navbar-brand">Sign up</a>
           </ng-template>
         </li>
-        <li ngbDropdown *ngIf='user$ | async as user; else anonymous' class="nav-item dropdown">
+        <li><a class="dropdown-item" routerLink='/favourites'>Favourites</a></li>
+        <li ngbDropdown *ngIf='auth.user$ | async as user; else anonymous' class="nav-item dropdown">
           <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ user.displayName }}
           </a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown03">
-            <a class="dropdown-item">Favorites</a>
+            <a class="dropdown-item" routerLink='/favourites'>Favourites</a>
             <a class="dropdown-item" (click)='logout()'>Log Out</a>
           </div>
         </li>
