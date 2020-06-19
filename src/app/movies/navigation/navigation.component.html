@@ -6,11 +6,10 @@
   
           <ng-template #anonymous>
             <a class="navbar-brand" (click)='login()' routerLink='/login'>Login</a>
-            <a class="navbar-brand">Sign up</a>
           </ng-template>
         </li>
         <li ngbDropdown *ngIf='auth.user$ | async as user; else anonymous' class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a ngbDropdownToggle class="navbar-brand dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ user.displayName }}
           </a>
           <div ngbDropdownMenu class="dropdown-menu">

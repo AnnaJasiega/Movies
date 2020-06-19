@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router, RouterStateSnapshot } from '@angular/router';
+import { Router, ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 
 
 
@@ -10,16 +10,22 @@ import { Router, RouterStateSnapshot } from '@angular/router';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
-  name: string='anonym';
- 
-  constructor(private auth: AuthService, private router: Router) { 
+  url
+
+  constructor(private auth: AuthService, private route: ActivatedRoute) { 
   }
 
   logout() {
     this.auth.logout();
   }
 
-  login(state: RouterStateSnapshot){
-    this.router.navigate(['/login'], { queryParams: {returnUrl: state.url}});
+  getUrl(){
+    this.route.snapshot.paramMap.getAll
+  }
+
+  login() {
+    this.getUrl();
+    console.log(this.url)
+    //this.router.navigate(['/login'], { queryParams: {returnUrl: returnState}})
   }  
 }
