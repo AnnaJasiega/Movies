@@ -3,6 +3,7 @@
     <div class='movie' *ngFor='let movies of moviesAll'>
        <div class='img' *ngFor='let movie of movies.Search'>
             <img *ngIf='movie.Poster != "N/A", else tape' src='{{movie.Poster}}' routerLink='/movies/{{movie.imdbID}}'>
+        <!--    <div class = 'heart' (click)="isClicked = !isClicked"><mat-icon class="material-icons" (click)='addToFav()' [class.clikedHeart]="isClicked">favorite</mat-icon></div> -->
             <ng-template #tape>
                 <img src='https://webstockreview.net/images/camera-clipart-abstract-26.png' routerLink='/movies/{{movie.imdbID}}'>
             </ng-template>

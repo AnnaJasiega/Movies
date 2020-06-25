@@ -36,17 +36,22 @@ img {
         width: 70%;
     }
 }
-.starFav{
+.heart{
     position: absolute;
     bottom: 0px;
-    right: 10px;
+    left: 0px;
     text-align: end;
     display: inline-block;
-    font-size: 5rem;
+    font-size: 5rem; 
 }
-.clikedStar {
-    color: yellow;
+.material-icons{
+    font-size: 5rem; 
 }
+.clikedHeart {
+    @include heart-transform;
+    color: red;
+}
+
 .borders {
     width: 100%;
     margin-top: 10px;

@@ -13,6 +13,7 @@
     flex-wrap: wrap;
 }
 .img {
+    position: relative;
     width: 20%;  
     @media screen and (max-width: $max-mobile) {
         width: 50%;
@@ -30,6 +31,23 @@ img {
 
 }
 
-img:hover {
+.img:hover {
     @include hover-transform;
+}
+.heart{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    text-align: end;
+    display: inline-block;
+    font-size: 5rem; 
+}
+
+.material-icons {
+    font-size: 2rem;
+}
+
+.clikedHeart {
+    color: red;
+    @include heart-transform;
 }

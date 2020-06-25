@@ -1,3 +1,4 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @mixin soft-box-shadow {
 
@@ -6,6 +7,19 @@
     transform: scale(1.05);
     transition: transform 0.2s ease;
   }
+
+
+  @mixin heart-transform {
+    
+    animation-name: heartMove;
+    animation-duration: 0.5s;
+  }
+
+@keyframes heartMove {
+  0% {transform: scale(0)};
+  97% {transform: scale(1.05)};
+  100% {transform: scale(1)};
+}
 
 $background-color: #e2ede8;
 $primary: rgba(181,58,120);

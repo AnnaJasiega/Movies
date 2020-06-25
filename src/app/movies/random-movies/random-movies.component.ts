@@ -11,7 +11,8 @@ export class RandomMoviesComponent implements OnInit {
 
   @Input('type') type: String;
   randomWord: String;
-  init: boolean = false;
+  private init: boolean = false;
+  private isClicked: boolean = false;
   private randomWords: Array<String> = ['baby', 'moon', 'light', 
     'movie', 'day', 'animal', 'tree', 'world', 'chair', 'school', 
     'meat', 'hall', 'unit', 'computer', 'light', 'summer', 'year', 

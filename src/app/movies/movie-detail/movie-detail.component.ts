@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { MoviesSearchService } from '../../services/movies-search.service';
+import { FavouriteListService } from 'src/app/services/favouriteList.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -24,20 +25,27 @@ export class MovieDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, 
               private router: Router,
               private service: MoviesSearchService,
+              private favouriteList: FavouriteListService
               ) { }
 
     seePoster(){
       this.isVisible=!this.isVisible
     }
+
     seeMoreClick(){
       this.seeMore = !this.seeMore
     }
+
     checkPoster() {
       if (this.movie.Poster == 'N/A') {
-        console.log("AAA");
         return this.poster = 'https://webstockreview.net/images/camera-clipart-abstract-26.png'
       }
       return this.poster = this.movie.Poster
+    }
+
+    addOrRemoveToFav() {
+
+      this.favouriteList.addOrRemoveToFavourites(this.movieId, this.isClicked);
     }
 
     ngOnInit() {
@@ -54,5 +62,7 @@ export class MovieDetailComponent implements OnInit {
         this.currentRate = this.movie.imdbRating;
         this.checkPoster();
       });
+
+      this.favouriteList.checkIfExist(this.movieId)
     }
 }

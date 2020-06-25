@@ -3,11 +3,9 @@
         <br>
         <button type="button" class="btn btn-color btn-lg btn-block" routerLink='/{{url}}'>Back</button>
         <section class='section1'>
-            <div class='starLoc' (click)="isClicked = !isClicked" [class.clikedStar]="isClicked">
+            <div class='starLoc'>
                 <img src='{{poster}}' class='poster' (click)='seePoster()'>
-                <div class = 'starFav'>&#9733;</div>
-                <div>
-                </div>
+                <div class = 'heart'><mat-icon class="material-icons" (click)="isClicked = !isClicked" (click)='addOrRemoveToFav()' [class.clikedHeart]="isClicked">favorite</mat-icon></div>
             </div>
             <div class='details'>
                 <div class='sectionRadius'> 

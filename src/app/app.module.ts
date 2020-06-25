@@ -28,6 +28,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { FavComponent } from './auth/fav/fav.component';
+import { UserService } from './services/user.service';
+import { FavouriteListService } from './services/favouriteList.service';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,8 @@ import { FavComponent } from './auth/fav/fav.component';
     ScrollEventModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    MatIconModule,
+    
     
   ],
   providers: [
@@ -62,6 +67,8 @@ import { FavComponent } from './auth/fav/fav.component';
     AngularFireAuth,
     AuthService,
     AuthGuard,
+    UserService,
+    FavouriteListService,
   ],
   bootstrap: [AppComponent]
 })

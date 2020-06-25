@@ -21,7 +21,7 @@ export class NavigationComponent {
 
   getUrl(){
     this.route.snapshot.paramMap.getAll
-  }
+  };
 
   login() {
     this.getUrl();

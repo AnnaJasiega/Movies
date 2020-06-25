@@ -8,7 +8,6 @@ export class FavouriteListService {
 
   constructor(private db: AngularFireDatabase) { }
 
-
   private create() {
     return this.db.list('/favouriteMovie').push({
       dateCreated: new Date().getTime(),
@@ -28,14 +27,19 @@ export class FavouriteListService {
     return this.db.object('/favouriteMovie/' + favId + '/' + movieId);
   }
 
-  async addToFavourites(movieId) {
-    console.log("ANIA" + movieId)
+  async addOrRemoveToFavourites(movieId, isClicked) {
     let favId = await this.getOrCreateFavId();
-    console.log(favId)
     let movie$ = this.getMovie(favId, movieId);
-    console.log(movie$)
 
-   movie$.set({movieId: movieId})
-    
+    if(isClicked) movie$.set({movieId: movieId})
+    else movie$.remove();  
+  }
+
+  checkIfExist(movieId){
+    let favId = localStorage.getItem('favId');
+    //if (!favId) return false;
+    let movie$ = this.getMovie(favId, movieId);
+  
+        
   }
 }

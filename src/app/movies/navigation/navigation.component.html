@@ -10,7 +10,7 @@
         </li>
         <li ngbDropdown *ngIf='auth.user$ | async as user; else anonymous' class="nav-item dropdown">
           <a ngbDropdownToggle class="navbar-brand dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ user.displayName }}
+           <mat-icon class='mat-icon'>account_circle</mat-icon> {{ user.displayName }}
           </a>
           <div ngbDropdownMenu class="dropdown-menu">
             <a class="dropdown-item" routerLink='/favourites'>Favourites</a>
