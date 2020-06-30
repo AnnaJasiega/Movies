@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
+import { FavouriteCart } from '../models/favouriteCart'
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +11,13 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class FavouriteListService {
 
   constructor(private db: AngularFireDatabase) { }
+
+  async getFavourites(): Promise<Observable<FavouriteCart>> {
+    let favId = await this.getOrCreateFavId();
+    let object$ = this.db.object('/favouriteMovie/' + favId).snapshotChanges()
+      console.log(object$)
+    return 
+  }
 
   private create() {
     return this.db.list('/favouriteMovie').push({
@@ -39,7 +50,8 @@ export class FavouriteListService {
     let favId = localStorage.getItem('favId');
     //if (!favId) return false;
     let movie$ = this.getMovie(favId, movieId);
-  
+    
+    
         
   }
 }
