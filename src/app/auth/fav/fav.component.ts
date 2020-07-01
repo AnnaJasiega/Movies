@@ -14,8 +14,14 @@ favouriteMovies;
 
   constructor(private favouriteCart: FavouriteListService) { }
 
-  ngOnInit(): void {
-    this.favouriteMovies = this.favouriteCart.getFavourites()
+  async ngOnInit() {
+    let movies$ = await this.favouriteCart.getFavourites()
+    
+    movies$.subscribe(favouriteMovies => {
+      this.favouriteMovies = favouriteMovies
+    });
+      console.log(this.favouriteMovies) 
+
   }
 
 }

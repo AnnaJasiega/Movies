@@ -1,20 +1,21 @@
-<div class='container' routerLink='/{{url}}/{{id}}'>
+<div class='container' *ngIf='movie != null' routerLink='/{{url}}/{{id}}'>
     <div class='img'> 
-      <img src="{{poster}}">
+      <img src="{{movie.Poster}}">
       <div class='visible'>
-        <div *ngFor='let rating of ratings' class='rating'> &hearts; {{rating.Value}}</div>
+        <div *ngFor='let rating of ratings' class='rating'> 
+          &hearts; {{rating.Value}}
+        </div>
       </div>
     </div>
     <div class='info'>
-      <h2 class='title text'>{{ title }} </h2>
+      <h2 class='title text'>{{ movie.Title }} </h2>
       <div class='shortinfo'>
         <p class="text-secondary">Release date</p>
-        <p class='text'>{{ year }} </p>
+        <p class='text'>{{ movie.Year }} </p>
         <p class="text-secondary">ID number</p>
         <p class='text'>{{id}}</p>
         <p class="text-secondary">Plot</p>
-        <p class='text'>{{plot | summary }}</p>
+        <p class='text'>{{movie.Plot | summary }}</p>
       </div>
     </div>
-  </div>
-  
+</div>  

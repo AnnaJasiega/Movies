@@ -9,12 +9,10 @@ import { MoviesSearchService } from '../../services/movies-search.service';
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultComponent implements OnInit {
-  @Input('title') title: string;
-  @Input('year') year: string;
-  @Input('poster') poster: string;
-  @Input('id') id:string;
 
-  private movie:any = null;
+  @Input("id") id:string;
+
+  movie:any = null;
   private url:any = '';
   private ratings:[];
   private plot:string = "";

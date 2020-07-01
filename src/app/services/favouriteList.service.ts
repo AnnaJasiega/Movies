@@ -10,14 +10,25 @@ import { FavouriteCart } from '../models/favouriteCart'
 })
 export class FavouriteListService {
 
-  constructor(private db: AngularFireDatabase) { }
+  favouriteMovie;
+  userID: string;
 
+  constructor(private db: AngularFireDatabase) { }
+/*00
   async getFavourites(): Promise<Observable<FavouriteCart>> {
     let favId = await this.getOrCreateFavId();
-    let object$ = this.db.object('/favouriteMovie/' + favId).snapshotChanges()
+    let object$ = this.db.object('/favouriteMovie/' + favId).valueChanges();
       console.log(object$)
-    return 
+    return
   }
+*/
+
+  async getFavourites(){
+    let userId = await this.getOrCreateUserId();
+    this.favouriteMovie = this.db.list('/favouriteMovie/' + userId).valueChanges();
+    return this.favouriteMovie;
+  }  
+
 
   private create() {
     return this.db.list('/favouriteMovie').push({
@@ -25,32 +36,33 @@ export class FavouriteListService {
     })
   }
 
-  private async getOrCreateFavId() {
-    let favId = localStorage.getItem('favId');
-    if (favId) return favId;
+  private async getOrCreateUserId() {
+    let userId = localStorage.getItem('userId');
+    if (userId) return userId;
 
     let result = await this.create();
-    localStorage.setItem('favId', result.key);
+    localStorage.setItem('userId', result.key);
     return result.key
   }
 
-  private getMovie(favId: string, movieId: string){
-    return this.db.object('/favouriteMovie/' + favId + '/' + movieId);
+  private getMovie(userId: string, movieId: string){
+    return this.db.object('/favouriteMovie/' + userId + '/' + movieId);
   }
 
   async addOrRemoveToFavourites(movieId, isClicked) {
-    let favId = await this.getOrCreateFavId();
-    let movie$ = this.getMovie(favId, movieId);
+    let userId = await this.getOrCreateUserId();
+    let movie$ = this.getMovie(userId, movieId);
 
     if(isClicked) movie$.set({movieId: movieId})
     else movie$.remove();  
   }
 
   checkIfExist(movieId){
-    let favId = localStorage.getItem('favId');
+    let userId = localStorage.getItem('userId');
     //if (!favId) return false;
-    let movie$ = this.getMovie(favId, movieId);
-    
+    let movie$ = this.getMovie(userId, movieId);
+    //console.log(movie$.valueChanges());
+    //return movie$.valueChanges();
     
         
   }
