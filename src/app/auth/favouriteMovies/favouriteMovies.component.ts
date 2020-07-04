@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-fav',
-  templateUrl: './fav.component.html',
-  styleUrls: ['./fav.component.css']
+  templateUrl: './favouriteMovies.component.html',
+  styleUrls: ['./favouriteMovies.component.scss']
 })
-export class FavComponent implements OnInit {
+export class FavouriteMoviesComponent implements OnInit {
 
 favouriteMovies;
 
@@ -19,9 +19,8 @@ favouriteMovies;
     
     movies$.subscribe(favouriteMovies => {
       this.favouriteMovies = favouriteMovies
+      this.favouriteMovies.reverse();
     });
-      console.log(this.favouriteMovies) 
-
   }
 
 }

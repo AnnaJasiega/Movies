@@ -1,0 +1,14 @@
+@import '../../../theme.scss';
+
+li{
+    background: white;
+    margin: 5px;
+    border-radius: 0.2em; 
+}
+div {
+    margin-top: 20px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+    color: $primary;
+}

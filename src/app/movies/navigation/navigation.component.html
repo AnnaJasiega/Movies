@@ -5,7 +5,7 @@
         <li class="nav-item active">
   
           <ng-template #anonymous>
-            <a class="navbar-brand" (click)='login()' routerLink='/login'>Login</a>
+            <a class="navbar-brand" (click)='login()' routerLink='/login'>Login with google</a>
           </ng-template>
         </li>
         <li ngbDropdown *ngIf='auth.user$ | async as user; else anonymous' class="nav-item dropdown">

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { MoviesSearchService } from '../../services/movies-search.service';
+import { SummaryPipe } from '../../pipes/summary.pipe'
 
 @Component({
   selector: 'app-search-result',
